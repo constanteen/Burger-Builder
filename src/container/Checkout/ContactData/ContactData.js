@@ -97,7 +97,6 @@ class ContactData extends Component {
 
     orderButtonClicked = (e) => {
         e.preventDefault();
-        this.setState({ loading: true });
         const formData = {};
         for (let formElement in this.state.orderForm) {
             formData[formElement] = this.state.orderForm[formElement].value;
@@ -107,15 +106,6 @@ class ContactData extends Component {
             price: this.props.price,
             orderData: formData,
         }
-        axiosInstance.post('/orders.json', order)
-            .then((response) => {
-                this.setState({ loading: false })
-                this.props.history.push( '/' );
-            })
-            .catch((error) => {
-                this.setState({ loading: false })
-            })
-        
     }
 
     checkValidity(value, rules) {
