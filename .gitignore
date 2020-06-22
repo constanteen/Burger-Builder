@@ -4,7 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
-/axios-orders.js
+/src/axios-orders.js
 
 # testing
 /coverage
